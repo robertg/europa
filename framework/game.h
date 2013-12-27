@@ -8,7 +8,7 @@ namespace Framework {
 	std::vector<Cell> pos_neighbours(Cell pivot);
 	int neighbour_scan(Cell pivot, std::vector<Cell> &world);
 	bool exists(Cell pivot, std::vector<Cell> &world);
-	Color blend(Color a, Color b);
+	Color blend_color(Color a, Color b);
 	void purge_dead(std::vector<Cell> &world);
 }
 

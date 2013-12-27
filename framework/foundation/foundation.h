@@ -19,5 +19,6 @@ struct Color {
 struct Cell {
 	Pos position;
 	Color color;
+	bool alive;
 };
 #endif
