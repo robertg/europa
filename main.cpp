@@ -7,7 +7,7 @@
 #include <SDL_opengl.h>
 
 //Game:
-#include "framework/game.cpp"
+#include "framework/game.h"
 
 int main(int argc, char* argv[] ) {
 	

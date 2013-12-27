@@ -4,10 +4,10 @@
 
 //update: &vector<Life> -> NULL
 //Takes in a vector containing all the life forms on the screen and updates them.
-void Framework::update(vector<Cell> &world) {
+void Framework::update(std::vector<Cell> &world) {
 	for(auto& i : world) {
 
-		vector<Cell> neighbours = pos_neighbours(i);
+		std::vector<Cell> neighbours = pos_neighbours(i);
 		int count_alive = neighbour_scan(i, &world);	
 
 		switch(count_alive) {
@@ -37,20 +37,22 @@ void Framework::update(vector<Cell> &world) {
 
 //pos_neighbours: Cell -> vector<Cell>
 //Returns the location of all cells around a pivot, whether alive or dead.
-vector<Cell> Framework::pos_neighbours(Cell pivot) {
+std::vector<Cell> Framework::pos_neighbours(Cell pivot) {
 	//This should return 6 neighbours.	
+	return new vector<Cell>();
 }
 
 //neighbour_scan: Cell vector<Cell> -> int
 //Finds the count of neighbours currently in a position in 3D space.
-int Framework::neighbour_scan(Cell pivot, vector<Cell> &world) {
+int Framework::neighbour_scan(Cell pivot, std::vector<Cell> &world) {
 	//A neighbour constitutes as something parallel to a cell.	
+	return 0;
 }
 
 //exists?: Cell vector<Cell> -> bool
 //Checks if a cell exists in the world.
-bool Framework::exists?(Cell pivot, vector<Cell> &world) {
-
+bool Framework::exists(Cell pivot, std::vector<Cell> &world) {
+	return true;
 }
 
 //blend: Color Color -> Color
@@ -65,7 +67,7 @@ Color Framework::blend(Color a, Color b) {
 
 //purge_dead: vector<Cell> -> NULL
 //Removes any dead cells found in the vector of cells.
-void Framework::purge_dead(vector<Cell> &world) {
+void Framework::purge_dead(std::vector<Cell> &world) {
 	for(auto &i : world) {
 		if(!i.alive) {
 			world.remove(i);
