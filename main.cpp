@@ -13,6 +13,7 @@
 
 //Game:
 #include "framework/game.h"
+#include "gfx/gfx.h"
 
 int main(int argc, char* argv[] ) {
 	
@@ -29,13 +30,14 @@ int main(int argc, char* argv[] ) {
 	GLuint vertexBuffer;
 	glGenBuffers(1, &vertexBuffer);
 	printf("%u\n", vertexBuffer);
-
+	
+	//INIT GAME:
+	//---------
 	//Seed:
 	srand(time(0));
 	std::vector<Cell> world = Framework::initial_startup(100);
-
-	
-	
+	//---------
+	//Draw All positions:	
 	for(std::vector<Cell>::iterator i = world.begin(); i != world.end(); ++i) {
 		printf("X:%d, Y:%d, Z: %d \n", i->position.X, i->position.Y, i->position.Z);
 	}
@@ -45,6 +47,7 @@ int main(int argc, char* argv[] ) {
 			if(windowEvent.type == SDL_QUIT) break;
 		}
 		Framework::update(world);
+		Gfx::draw(world);
 		printf("Alive: %lu \n", world.size());
 		usleep(1000000);
 		SDL_GL_SwapWindow(window);
