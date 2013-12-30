@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <stdio.h>
 
-#include "foundation/foundation.h"
+#include "foundation/foundation.h" 
 #include "game.h"
 
 //update: &vector<Life> -> NULL
@@ -165,7 +165,7 @@ void Framework::purge_dead(std::vector<Cell> &world) {
 
 //initial_startup: Int -> vector<Cell>
 //Generates cells in a starting area of a radius of 250 cells.
-std::vector<Cell> Framework::initial_startup(int count) {
+std::vector<Cell> Framework::initial_startup(int count, int radius) {
 	std::vector<Cell> to_return;
 	for(int i = 0; i < count; i++) {
 
@@ -182,9 +182,9 @@ std::vector<Cell> Framework::initial_startup(int count) {
 
 		//Generate a position:
 		Pos pos;
-		pos.X = Framework::maybe_negative() * (rand() % 5);
-		pos.Y = Framework::maybe_negative() * (rand() % 5);
-		pos.Z = Framework::maybe_negative() * (rand() % 5);
+		pos.X = Framework::maybe_negative() * (rand() % radius);
+		pos.Y = Framework::maybe_negative() * (rand() % radius);
+		pos.Z = Framework::maybe_negative() * (rand() % radius);
 
 		generated.position = pos;
 

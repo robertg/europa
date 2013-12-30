@@ -12,5 +12,5 @@
 #include "../framework/foundation/foundation.h"
 
 namespace Gfx {
-	void draw(std::vector<Cell> &world);
+	void draw(std::vector<Cell> &world, float rotate_x, float rotate_y);
 }

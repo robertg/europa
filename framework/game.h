@@ -14,7 +14,7 @@ namespace Framework {
 	Cell get_cell(Pos position, std::vector<Cell> &world);
 	Color blend_color(Color a, Color b);
 	void purge_dead(std::vector<Cell> &world);
-	std::vector<Cell> initial_startup(int count);
+	std::vector<Cell> initial_startup(int count, int radius);
 	int maybe_negative();
 }
 
